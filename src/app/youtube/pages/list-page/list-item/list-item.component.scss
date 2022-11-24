@@ -1,0 +1,77 @@
+.item {
+    background: #E5E5E5;
+    border-radius: 5px;
+    height: 100%;
+
+    &__wrapper {
+        padding: 15px 0;
+        max-width: 90%;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 1 / 0.5;
+        object-fit: cover;
+    }
+
+    &__counts {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    &__views {
+        padding-left: 25px;
+        background: url(../../../../../assets/images/viewed.svg) no-repeat left center;
+    }
+
+    &__likes {
+        padding-left: 25px;
+        background: url(../../../../../assets/images/liked.svg) no-repeat left center;
+    }
+
+    &__dislikes {
+        padding-left: 25px;
+        background: url(../../../../../assets/images/dislike.svg) no-repeat left center;
+    }
+
+    &__comments {
+        padding-left: 25px;
+        background: url(../../../../../assets/images/comments.svg) no-repeat left center;
+    }
+
+    &__text-content {
+        text-align: center;
+    }
+
+    &__title {
+        min-height: 90px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        color: #4F4F4F;
+        padding: 15px 0;
+    }
+
+    &__btn {
+        background: #2F80ED;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 30px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__border {
+        height: 5px;
+        display: block;
+        border-radius: 0 0 5px 5px;
+    }
+}

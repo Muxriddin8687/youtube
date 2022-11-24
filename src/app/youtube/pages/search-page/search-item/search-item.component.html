@@ -1,0 +1,10 @@
+<div class="item" *ngIf="item">
+    <div class="item__wrapper">
+        <img src="{{ item.snippet.thumbnails.medium.url }}" alt="" class="item__image">
+        <div class="item__text-content">
+            <div class="item__title">{{ item.snippet.title | slice: 0:35 }}...</div>
+            <a routerLink="item/{{item.id.videoId}}" class="item__btn">more...</a>
+        </div>
+    </div>
+    <span class="item__border" [appDateColor]="item.snippet.publishedAt"></span>
+</div>

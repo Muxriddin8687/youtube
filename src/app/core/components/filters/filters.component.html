@@ -1,0 +1,12 @@
+<div class="filters" *ngIf="filtersService.filtersIsActive">
+    <div class="container">
+        <div class="filters__wrapper">
+            <div class="filters__title">Sorting by:</div>
+
+            <app-sort-buttons></app-sort-buttons>
+
+            <app-filter-input (filterInput)="saveFilterValue($event)"></app-filter-input>
+
+        </div>
+    </div>
+</div>

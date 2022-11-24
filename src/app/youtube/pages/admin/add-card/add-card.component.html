@@ -1,0 +1,69 @@
+<div class="container">
+
+    <mat-card class="card">
+        <h3 class="my-3">Login</h3>
+        <form class="example-form" [formGroup]="cardForm" (submit)="addCard()">
+
+            <!-- title -->
+            <mat-form-field class="w-100" appearance="fill">
+                <mat-label>Title</mat-label>
+                <input matInput formControlName="title">
+
+                <mat-error
+                    *ngIf="cardForm.get('title')?.hasError('minlength') && !cardForm.get('title')?.hasError('required')">
+                    The title is too short
+                </mat-error>
+                <mat-error
+                    *ngIf="cardForm.get('title')?.hasError('maxlength') && !cardForm.get('title')?.hasError('required')">
+                    The title is too long
+                </mat-error>
+                <mat-error *ngIf="cardForm.get('title')?.hasError('required')">
+                    Please enter a title
+                </mat-error>
+
+            </mat-form-field>
+
+            <!-- description -->
+            <mat-form-field class="w-100" appearance="fill">
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description">
+
+                <mat-error *ngIf="cardForm.get('description')?.hasError('maxlength')">
+                    The description is too long
+                </mat-error>
+
+            </mat-form-field>
+
+            <!-- image link -->
+            <mat-form-field class="w-100" appearance="fill">
+                <mat-label>Link image</mat-label>
+                <input matInput formControlName="imageLink">
+
+                <mat-error *ngIf="cardForm.get('imageLink')?.hasError('pattern') && !cardForm.get('imageLink')?.hasError('required')">
+                    The image link is invalid
+                </mat-error>
+                <mat-error *ngIf="cardForm.get('imageLink')?.hasError('required')">
+                    Please enter a link to the image
+                </mat-error>
+
+            </mat-form-field>
+
+            <!-- video link -->
+            <mat-form-field class="w-100" appearance="fill">
+                <mat-label>Link ideo</mat-label>
+                <input matInput formControlName="videoLink">
+
+                <mat-error
+                    *ngIf="cardForm.get('videoLink')?.hasError('pattern') && !cardForm.get('videoLink')?.hasError('required')">
+                    The video link is invalid
+                </mat-error>
+                <mat-error *ngIf="cardForm.get('videoLink')?.hasError('required')">
+                    Please enter a link to the video
+                </mat-error>
+
+            </mat-form-field>
+
+            <button mat-raised-button color="primary">Create card</button>
+        </form>
+    </mat-card>
+</div>

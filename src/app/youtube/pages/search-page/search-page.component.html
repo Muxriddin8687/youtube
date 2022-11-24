@@ -1,0 +1,5 @@
+<div class="container">
+    <div class="items__list">
+        <app-search-item *ngFor="let item of searchItems$$ | async" [item]="item" class="search-item"></app-search-item>
+    </div>
+</div>

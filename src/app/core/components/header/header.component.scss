@@ -1,0 +1,95 @@
+.header {
+    background-color: #E5E5E5;
+    position: relative;
+
+    .header__wrapper {
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        padding: 20px 0;
+
+        .header__profile {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            color: #4F4F4F;
+
+            .profile__name {
+                margin-right: 10px;
+                color: #4F4F4F;
+            }
+
+            img {
+                height: 40px;
+            }
+
+            span {
+                margin: 0 15px;
+                font-size: 22px;
+            }
+
+            button {
+                border: none;
+                background-color: transparent;
+                font-size: 16px;
+                color: #4F4F4F;
+
+                &:hover {
+                    cursor: pointer;
+                    color: #000;
+                }
+            }
+        }
+
+        .header__search {
+            display: flex;
+            align-items: center;
+
+            .search {
+                &__wrapper {
+                    margin: 0 20px;
+                }
+
+                &__input {
+                    border: 0;
+                    background: #EFEFEF;
+                    width: 396px;
+                    height: 35px;
+                    padding: 0 10px;
+                }
+
+                &__input:focus {
+                    border: none !important;
+                    box-shadow: none !important;
+                }
+
+                &__btn {
+                    height: 35px;
+                    padding: 0 20px;
+                    background: #2F80ED;
+                    border-radius: 0 4px 4px 0;
+                    border: 0;
+                    color: #fff;
+                    font-size: 16px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .search__settings {
+                border: 0;
+                background-color: transparent;
+                cursor: pointer;
+
+                img {
+                    height: 40px;
+                }
+            }
+        }
+    }
+}

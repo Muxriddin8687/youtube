@@ -1,0 +1,27 @@
+<header class="header">
+    <div class="container">
+        <div class="header__wrapper">
+
+            <div class="header__logo">
+                <img src="./assets/images/logo.svg" alt="logo image">
+            </div>
+
+            <div class="header__search">
+                <div class="search__wrapper">
+                    <input type="text" #inputValue class="search__input" placeholder="What are you want to find out?" >
+                </div>
+
+                <button class="search__settings" (click)="toggleFilters()">
+                    <img src="./assets/images/settings.svg" alt="settings image">
+                </button>
+            </div>
+
+            <div class="header__profile">
+                <div class="profile__name">Your Name</div>
+                <img src="./assets/images/login.svg" alt="profile image" class="profile__img">
+                <span>|</span>
+                <button (click)="logOut()">Log Out</button>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="item" *ngIf="item[0]; else notFound">
+        <!-- item details content -->
+        <div class="item__img">
+            <img src="{{ item[0].snippet.thumbnails.medium.url }}" alt="item details">
+        </div>
+        <div class="item__text-content">
+            <div class="item__text">
+                <h3>{{ item[0].snippet.title }}</h3>
+                <hr>
+                <p>{{ item[0].snippet.publishedAt | date: 'fullDate' }}</p>
+                <br />
+                <h4>Description:</h4>
+                <p>{{ item[0].snippet.description }}</p>
+            </div>
+            <div class="item__statistics">
+                <div class="item__views">{{ item[0]!.statistics?.viewCount }}</div>
+                <div class="item__likes">{{ item[0]!.statistics?.likeCount }}</div>
+                <div class="item__comments">{{ item[0]!.statistics?.commentCount }}</div>
+            </div>
+
+            <!-- bottom border with color -->
+            <span class="item__border"></span>
+        </div>
+
+        <!-- button navigate to back -->
+        <button routerLink="/main" class="btn-back"><</button>
+
+    </div>
+
+    <ng-template #notFound>
+        <br><br>
+        <h3 align="center">Not Found</h3>
+    </ng-template>
+    
+</div>

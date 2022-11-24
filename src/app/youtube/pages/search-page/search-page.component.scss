@@ -1,0 +1,10 @@
+.items__list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 50px 0;
+    gap: 20px;
+}
+
+.search-item {
+    grid-column: 3 span;
+}

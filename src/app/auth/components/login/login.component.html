@@ -1,0 +1,55 @@
+<div class="container">
+
+    <mat-card class="card">
+        <h3 class="my-3">Login</h3>
+        <form class="example-form" [formGroup]="loginForm" (submit)="login()">
+
+            <mat-form-field class="w-100" appearance="fill">
+                <mat-label>Login</mat-label>
+                <input matInput formControlName="login">
+
+                <mat-error
+                    *ngIf="loginForm.get('login')?.hasError('email') && !loginForm.get('login')?.hasError('required')">
+                    The login email is invalid
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('login')?.hasError('required')">
+                    Please enter a login email
+                </mat-error>
+
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+
+                <mat-error
+                    *ngIf="loginForm.get('password')?.invalid && !loginForm.get('password')?.hasError('required')">
+                    Your password isn't strong enough
+                    <p *ngIf="loginForm.get('password')?.hasError('minlength')">
+                        - at least 8 characters
+                    </p>
+                    <p *ngIf="loginForm.get('password')?.hasError('requiresDigit')">
+                        - at a mixture of letters and numbers
+                    </p>
+                    <p
+                        *ngIf="loginForm.get('password')?.hasError('requiresUppercase') || loginForm.get('password')?.hasError('requiresLowercase')">
+                        - a mixture of both uppercase and lowercase letters
+                    </p>
+                    <p *ngIf="loginForm.get('password')?.hasError('requiresSpecialChars')">
+                        - inclusion of at least one special character, e.g., ! @ # ? ]
+                    </p>
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                    Please enter a password
+                </mat-error>
+
+            </mat-form-field>
+
+            <button mat-raised-button color="primary">Login</button>
+        </form>
+    </mat-card>
+</div>
